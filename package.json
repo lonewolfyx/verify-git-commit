@@ -1,0 +1,54 @@
+{
+    "name": "verify-git-commit",
+    "type": "module",
+    "version": "0.0.0",
+    "description": "Validate Git commit messages with Conventional Commit rules",
+    "author": "lonewolfyx",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/verify-git-commit",
+    "bugs": {
+        "url": "https://github.com/lonewolfyx/verify-git-commit"
+    },
+    "keywords": [
+        "git",
+        "commit",
+        "commit-msg",
+        "conventional-commits",
+        "git-hooks"
+    ],
+    "bin": {
+        "verify-git-commit": "./bin/verify-commit.js"
+    },
+    "files": [
+        "bin"
+    ],
+    "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix",
+        "prepare": "simple-git-hooks"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org",
+        "access": "public"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^9.2.0",
+        "@lonewolfyx/tsconfig": "^0.0.6",
+        "@types/node": "^26.1.1",
+        "eslint": "^10.8.0",
+        "jiti": "^2.7.0",
+        "lint-staged": "^17.2.0",
+        "picocolors": "^1.1.1",
+        "simple-git-hooks": "^2.13.1",
+        "tsdown": "^0.22.14",
+        "tsx": "^4.23.1",
+        "typescript": "^6.0.3"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged",
+        "commit-msg": "node bin/verify-commit.js"
+    },
+    "lint-staged": {
+        "*": "eslint --fix"
+    }
+}
