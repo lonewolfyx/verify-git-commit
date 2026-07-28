@@ -2,7 +2,7 @@
 
 Validate Git commit messages with Conventional Commit rules
 
-### Usage
+## Usage
 
 ```shell
 npx verify-git-commit
