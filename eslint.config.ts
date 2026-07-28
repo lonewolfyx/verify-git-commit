@@ -8,6 +8,7 @@ const config = antfu({
         indent: 4,
         quotes: 'single',
     },
+    markdown: false,
     rules: {
         'no-console': 'off',
         'node/prefer-global/process': 'off',
